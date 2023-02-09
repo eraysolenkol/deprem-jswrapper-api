@@ -3,7 +3,7 @@ import * as earthquakeController from '../controllers/earthquake.controller.js';
 
 const router = express.Router();
 
-router.get("/getLastEarthquakes", earthquakeController.getLastEarthquakes);
+router.get("/earthquakes", earthquakeController.getLastEarthquakes);
 
 
 
