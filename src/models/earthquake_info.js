@@ -3,7 +3,7 @@ import BaseResponse from "./base_response.js";
 /**
  * @class {EarthquakeInfo} - EarthquakeInfo class
  */
-class EarthquakeInfo extends BaseResponse {
+class EarthquakeInfo {
 
     date_YYMMDD;
     time;
@@ -19,8 +19,6 @@ class EarthquakeInfo extends BaseResponse {
     * Constructor of EarthquakeInfo class that presents us 
     * significant info about the earthquake
     * @constructor
-    * @param {number} status - Status number of response
-    * @param {string} message - Status message of response
     * @param {string} date_YYMMDD - Date of earthquake in format YY-MM-DD
     * @param {string} time - Time of earthquake in format HH:mm:ss
     * @param {number} latitude - Latitude of earthquake location
@@ -31,8 +29,7 @@ class EarthquakeInfo extends BaseResponse {
     * @param {string} location - Location of earthquake
     * @param {number} id - Id of earthquake
     */
-    constructor(status, message, date_YYMMDD, time,  latitude, longitude, depthInKm, type, magnitude, location, id) {
-        super(status,message);
+    constructor(date_YYMMDD, time,  latitude, longitude, depthInKm, type, magnitude, location, id) {
         this.date_YYMMDD = date_YYMMDD;
         this.time = time;
         this.latitude = latitude;

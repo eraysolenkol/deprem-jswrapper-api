@@ -8,7 +8,7 @@ export default class EarthquakeResponse extends BaseResponse {
     earthquakes;
 
 /**
-* Constructor of base class for responses
+* Constructor for earthquake responses
 * @constructor
 * @param {number} status - Status number of response
 * @param {string} message - Status message of response
