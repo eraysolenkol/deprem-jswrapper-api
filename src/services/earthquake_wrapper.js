@@ -2,6 +2,7 @@ import * as cheerio from 'cheerio';
 import axios from 'axios'
 import EarthquakeInfo from '../models/earthquake_info.js';
 import Constants from '../constants/constants.js';
+import EarthquakeResponse from '../models/earthquake_response.js';
 
 
 /**
@@ -37,8 +38,6 @@ export default class EarthquakeWrapper {
             const id = Number($(data[7]).text());
             earthquakes.push(
                 new EarthquakeInfo(
-                    response.status,
-                    response.statusText,
                     date_YYMMDD,
                     time,
                     latitude,
@@ -51,7 +50,7 @@ export default class EarthquakeWrapper {
                 )
             );
         }
-        return earthquakes;
+        return new EarthquakeResponse(response.status, response.statusText, earthquakes);
     }
 
     /**
@@ -94,8 +93,6 @@ export default class EarthquakeWrapper {
             const id = Number($(data[7]).text());
             earthquakes.push(
                 new EarthquakeInfo(
-                    response.status,
-                    response.statusText,
                     date_YYMMDD,
                     time,
                     latitude,
@@ -108,7 +105,7 @@ export default class EarthquakeWrapper {
                 )
             );   
         }
-        return earthquakes;
+        return new EarthquakeResponse(response.status, response.statusText, earthquakes);
     }
 
 
